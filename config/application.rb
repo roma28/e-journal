@@ -17,7 +17,7 @@ module EJournal
 
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-    config.assets.precompile += %w( *.js)
+    config.assets.precompile += %w( bootstrap.js)
 
   end
 end

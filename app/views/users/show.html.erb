@@ -1,7 +1,3 @@
 <% provide :title, @user.name+" | " %>
 
-<% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
-<% end %>
-
 <%= @user.name%> <%= @user.login %>

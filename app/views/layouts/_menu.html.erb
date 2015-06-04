@@ -1,10 +1,19 @@
 <div class="navbar navbar-default">
   <div class="container">
 
-  <ul class="nav navbar-nav">
-    <li class='<%= "active" if params[:action] == "home" %>'><%= link_to("Домашняя страница", root_path) %></li>
-    <li class='<%= "active" if params[:action] == "about" %>'><%= link_to("О проекте", about_path) %></li>
-  </ul>
+    <ul class="nav navbar-nav">
 
-</div>
+      <li class='<%= "active" if params[:action] == "home" %>'><%= link_to("Домашняя страница", root_path) %></li>
+      <li class='<%= "active" if params[:action] == "about" %>'><%= link_to("О проекте", about_path) %></li>
+
+      <% if signed_in? %>
+          <li><%= link_to("Профиль", current_user) %></li>
+          <li><%= link_to("Выйти", signout_path, method: "delete") %></li>
+      <% else %>
+          <li><%= link_to("Войти", signin_path) %></li>
+      <% end %>
+
+    </ul>
+
+  </div>
 </div>

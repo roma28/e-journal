@@ -13,8 +13,8 @@
               <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-cog"></span> Управление <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "Все пользователи", users_path %></li>
-                  <li><%= link_to "Создать пользователя", new_user_path %></li>
+                  <li><%= link_to(raw('<span class="glyphicon glyphicon-list-alt"></span> Все пользователи'), users_path) %></li>
+                  <li><%= link_to(raw('<span class="glyphicon glyphicon-file"></span> Создать пользователя'), new_user_path) %></li>
                 </ul>
               </li>
           <% end %>

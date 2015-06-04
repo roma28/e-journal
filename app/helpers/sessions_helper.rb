@@ -22,8 +22,29 @@ module SessionsHelper
     @current_user ||= User.find_by(remember_token: remember_token)
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   def signed_in?
     !current_user.nil?
+  end
+
+  def is_admin?(user)
+    if user
+      user.role == "admin"
+    else
+      false
+    end
+  end
+
+  def redirect_back_or(default)
+    redirect_to( session[:redirect_location] || default )
+    session.delete(:redirect_location)
+  end
+
+  def store_location
+    session[:redirect_location] = request.url if request.get?
   end
 
 end

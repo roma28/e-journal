@@ -1,0 +1,7 @@
+<tr>
+  <td><%= link_to user.login, user %></td>
+  <td><%= user.name %></td>
+  <td><%= user.role %></td>
+  <td><%= link_to(raw('Изменить  <span class="glyphicon glyphicon-pencil"></span>'), edit_user_path(user), class:"btn btn-primary btn-xs") %> &nbsp&nbsp&nbsp&nbsp
+    <%= link_to(raw('Удалить <span class="glyphicon glyphicon-trash"></span>'), user, method: :delete, data: { confirm: "Вы уверены" }, class: "btn btn-primary btn-xs") if !current_user?(user) %></td>
+</tr>

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50 }
   validates :login, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }
+  validates :role,  inclusion: { within: %w( teacher pupil admin ) }
   before_save { self.login = login.downcase }
   before_create :create_remember_token
   has_secure_password

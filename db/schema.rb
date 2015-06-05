@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604072414) do
+ActiveRecord::Schema.define(version: 20150605050127) do
+
+  create_table "grades", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "login"
@@ -20,7 +34,6 @@ ActiveRecord::Schema.define(version: 20150604072414) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "remember_token"
-    t.string   "role"
   end
 
   add_index "users", ["login"], name: "index_users_on_login", unique: true

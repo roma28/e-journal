@@ -17,8 +17,3 @@
   <%= f.label :password_confirmation, "Подтверждение пароля" %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
 </div>
-
-<div class="form-group">
-  <%= f.label :role, "Роль" %>
-  <%= f.select :role, [["Учитель", "teacher"], ["Ученик", "pupil"]], {}, {class: "form-control"} %>
-</div>

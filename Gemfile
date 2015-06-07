@@ -26,7 +26,8 @@ gem 'bootstrap-sass'
 gem 'sprockets', '2.11.0'
 gem 'faker', '1.1.2'
 gem 'bootstrap-will_paginate'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
+gem 'font-awesome-sass'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

@@ -3,25 +3,25 @@
 
     <ul class="nav navbar-nav">
 
-      <li class='<%= "active" if params[:action] == "home" %>'><%= link_to(raw('<span class="glyphicon glyphicon-home"></span> Домашняя страница'), root_path) %></li>
-      <li class='<%= "active" if params[:action] == "about" %>'><%= link_to(raw('<span class="glyphicon glyphicon-info-sign"></span> О проекте'), about_path) %></li>
+      <li class='<%= "active" if params[:action] == "home" %>'><%= link_to(raw('<i class="fa fa-home"></i> Домашняя страница'), root_path) %></li>
+      <li class='<%= "active" if params[:action] == "about" %>'><%= link_to(raw('<i class="fa fa-info"></i> О проекте'), about_path) %></li>
 
       <% if signed_in? %>
-          <li><%= link_to(raw('<span class="glyphicon glyphicon-user"></span> Профиль'), current_user) %></li>
+          <li><%= link_to(raw('<i class="fa fa-user"></i> Профиль'), current_user) %></li>
           
           <% if is_admin?(current_user) %>
               <li class="dropdown">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-cog"></span> Управление <span class="caret"></span></a>
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-cog"></i> Управление <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to(raw('<span class="glyphicon glyphicon-list-alt"></span> Все ученики'), users_path) %></li>
-                  <li><%= link_to(raw('<span class="glyphicon glyphicon-file"></span> Добавить ученика'), new_user_path) %></li>
+                  <li><%= link_to(raw('<i class="fa fa-list-alt"></i> Все ученики'), users_path) %></li>
+                  <li><%= link_to(raw('<i class="fa fa-file"></i> Добавить ученика'), new_user_path) %></li>
                 </ul>
               </li>
           <% end %>
           
-          <li><%= link_to(raw('<span class="glyphicon glyphicon-log-out"></span> Выйти'), signout_path, method: "delete") %></li>
+          <li><%= link_to(raw('<i class="fa fa-sign-out"></i> Выйти'), signout_path, method: "delete") %></li>
       <% else %>
-          <li><%= link_to(raw('<span class="glyphicon glyphicon-log-in"></span> Войти'), signin_path) %></li>
+          <li><%= link_to(raw('<i class="fa fa-sign-in"></i> Войти'), signin_path) %></li>
       <% end %>
 
     </ul>

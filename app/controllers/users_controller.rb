@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    login = User.new_login
     if @user.save
       flash[:success] = "Пользователь успешно создан"
       redirect_to @user
@@ -33,8 +34,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Профиль обновлен"
-      redirect_to users_url
+      flash[:success] = "Профиль успешно обновлен"
+      redirect_to @user
     else
       render "edit"
     end
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :mother_name, :mother_email, :mother_job, :mother_occupation, :mother_telephone, :mother_education,
+    params.require(:user).permit(:name, :login, :password, :password_confirmation, :mother_name, :mother_email, :mother_job, :mother_occupation, :mother_telephone, :mother_education,
                                  :father_name, :father_email, :father_job, :father_occupation, :father_telephone, :father_education)
   end
 

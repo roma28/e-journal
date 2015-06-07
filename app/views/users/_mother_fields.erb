@@ -25,5 +25,5 @@
 
 <div class="form-group">
   <%= f.label :mother_education, "Образование" %>
-  <%= f.text_field :mother_education, class: "form-control" %>
+  <%= f.select :mother_education,["н/д", "Высшее", "Неоконченое высшее", "Среднее специальное", "Среднее", "Неполное среднее"], {}, class: "form-control" %>
 </div>

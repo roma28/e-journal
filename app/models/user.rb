@@ -1,11 +1,20 @@
 class User < ActiveRecord::Base
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true
   validates :login, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }
-  validates :role,  inclusion: { within: %w( teacher pupil admin ) }
+
+  validates :mother_name, presence: true
+  validates :mother_telephone, presence: true
+  validates :mother_email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, allow_blank: true
+
+  validates :father_name, presence: true
+  validates :father_telephone, presence: true
+  validates :father_email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, allow_blank: true
+
   before_save { self.login = login.downcase }
   before_create :create_remember_token
+
   has_secure_password
 
   def User.new_remeber_token

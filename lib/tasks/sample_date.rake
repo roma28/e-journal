@@ -2,23 +2,15 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
 
-    User.create!(name: "admin", login: "admin", password: "foobar", password_confirmation: "foobar", role: "admin")
+    User.create!(name: "admin", login: "admin", password: "foobar", password_confirmation: "foobar")
 
     99.times do |n|
       name  = Faker::Name.name
-      login = "pupil-#{n+1}"
+      login = "example-#{n+1}"
       password  = "password"
-      role = "pupil"
-      User.create!(name: name, login: login, password: password, password_confirmation: password, role: role)
+      User.create!(name: name, login: login, password: password, password_confirmation: password)
     end
 
-    30.times do |n|
-      name  = Faker::Name.name
-      login = "teacher-#{n+1}"
-      password  = "password"
-      role = "teacher"
-      User.create!(name: name, login: login, password: password, password_confirmation: password, role: role)
-    end
 
   end
 end

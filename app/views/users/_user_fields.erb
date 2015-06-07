@@ -1,19 +1,34 @@
-<div class="form-group">
-  <%= f.label :login, "Логин" %>
-  <%= f.text_field :login, class: "form-control" %>
+  <div class="col-md-4">
+    <h3>Ученик</h3>
+    <div class="form-group">
+      <%= f.label :login, "Логин" %>
+      <%= f.text_field :login, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :name, "Имя" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, "Пароль" %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Подтверждение пароля" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+
+  </div>
+
+
+<div class="col-md-4">
+  <h3>Мать</h3>
+  <%= render "mother_fields", f: f, user: user %>
 </div>
 
-<div class="form-group">
-  <%= f.label :name, "Имя" %>
-  <%= f.text_field :name, class: "form-control" %>
-</div>
-
-<div class="form-group">
-  <%= f.label :password, "Пароль" %>
-  <%= f.password_field :password, class: "form-control" %>
-</div>
-
-<div class="form-group">
-  <%= f.label :password_confirmation, "Подтверждение пароля" %>
-  <%= f.password_field :password_confirmation, class: "form-control" %>
+<div class="col-md-4">
+  <h3>Отец</h3>
+  <%= render "father_fields", f: f, user: user %>
 </div>

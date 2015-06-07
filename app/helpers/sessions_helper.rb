@@ -32,7 +32,7 @@ module SessionsHelper
 
   def is_admin?(user)
     if user
-      user.role == "admin"
+      user.name == "admin"
     else
       false
     end

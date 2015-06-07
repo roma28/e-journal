@@ -49,20 +49,23 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:login, :name, :password, :password_confirmation, :role)
+    params.require(:user).permit(:name, :mother_name, :mother_email, :mother_job, :mother_occupation, :mother_telephone, :mother_education,
+                                 :father_name, :father_email, :father_job, :father_occupation, :father_telephone, :father_education)
   end
 
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to signin_path, notice: "Пожалуйста войдите"
+      flash[:warning] = "Пожалуйста войдите"
+      redirect_to signin_path
     end
   end
 
   def admin_user
     unless is_admin?(current_user)
       store_location
-      redirect_to signin_path, notice: "Пожалуйста войдите"
+      flash[:warning] = "Только администраторы имеют доступ к этой странице"
+      redirect_to signin_path
     end
   end
 

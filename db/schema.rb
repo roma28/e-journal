@@ -11,29 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605050127) do
-
-  create_table "grades", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "lessons", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20150605164910) do
 
   create_table "users", force: :cascade do |t|
     t.string   "login"
     t.string   "name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.string   "mother_name"
+    t.string   "mother_email"
+    t.string   "mother_job"
+    t.string   "mother_occupation"
+    t.string   "mother_telephone"
+    t.string   "mother_education"
+    t.string   "father_name"
+    t.string   "father_email"
+    t.string   "father_job"
+    t.string   "father_occupation"
+    t.string   "father_telephone"
+    t.string   "father_education"
   end
 
   add_index "users", ["login"], name: "index_users_on_login", unique: true

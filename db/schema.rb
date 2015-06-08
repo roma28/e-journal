@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605164910) do
+ActiveRecord::Schema.define(version: 20150608044117) do
+
+  create_table "grades", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "login"
@@ -32,6 +46,16 @@ ActiveRecord::Schema.define(version: 20150605164910) do
     t.string   "father_occupation"
     t.string   "father_telephone"
     t.string   "father_education"
+    t.string   "role"
+    t.string   "passport_series"
+    t.string   "passport_number"
+    t.string   "place_of_birth"
+    t.date     "date_of_birth"
+    t.string   "snils"
+    t.string   "inn"
+    t.string   "adress"
+    t.string   "telephone"
+    t.string   "email"
   end
 
   add_index "users", ["login"], name: "index_users_on_login", unique: true

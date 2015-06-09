@@ -1,0 +1,21 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+    attributes:
+      user:
+        name: "ФИО"
+        login: "Логин"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        telephone: "Телефон"
+        place_of_birth: "Место рождения"
+        passport: "Данные паспорта"
+        adress: "Адрес"
+        email: "E-mail"
+        mother_name: "ФИО матери"
+        mother_telephone: "Телефон матери"
+        mother_email: "E-mail матери"
+        father_name: "ФИО отца"
+        father_telephone: "Телефон отца"
+        father_email: "E-mail отца"

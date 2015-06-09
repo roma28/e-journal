@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
 
+  attr_accessor :skip_password_validation
+
   validates :login, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, unless: :skip_password_validation
 
   validates :mother_name, presence: true
   validates :mother_telephone, presence: true

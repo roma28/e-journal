@@ -1,9 +1,54 @@
 <% provide :title, @user.name+" | " %>
 
-<h2>
-  <%= @user.name%> <%= @user.login %>
-  <%= link_to(raw('Изменить  <i class="fa fa-pencil"></i>'), edit_user_path(@user), class:"btn btn-primary btn-sm") if (!current_user?(@user) || is_admin?(current_user) %> &nbsp&nbsp
-  <%= link_to(raw('Удалить <i class="fa fa-trash-o"></i>'), @user, method: :delete, data: { confirm: "Вы уверены" }, class: "btn btn-primary btn-sm")) if (!current_user?(@user) && is_admin?(current_user)) %>
-</h2>
+<h1>
+  <%= @user.name%>
+  <%= link_to(raw('Изменить  <i class="fa fa-pencil"></i>'), edit_user_path(@user), class:"btn btn-primary btn-sm") if (!current_user?(@user) || is_admin?(current_user)) %>
+  <%= link_to(raw('Удалить <i class="fa fa-trash-o"></i>'), @user, method: :delete, data: { confirm: "Вы уверены" }, class: "btn btn-primary btn-sm") if (!current_user?(@user) && is_admin?(current_user)) %>
+</h1>
 
-<h3></h3>
+<div class="col-md-4">
+  <h2>Данные об ученике</h2> <br/>
+  <b>ФИО: </b> <%= @user.name %> <br/>
+  <b>Логин: </b> <%= @user.login %> <br/>
+  <b>Адресс: </b> <%= @user.adress %> <br/>
+  <b>Телефон: </b> <%= @user.telephone %> <br/>
+  <b>E-mail</b> <%= @user.email %> <br/>
+  <b>Данные паспорта: </b> <%= @user.passport %> <br/>
+  <b>Дата рождения: </b> <%= @user.date_of_birth %> <br/>
+  <b>Место рождения: </b> <%= @user.place_of_birth %> <br/>
+  <b>ИНН: </b> <%= @user.inn %> <br>
+  <b>СНИЛС: </b> <%= @user.snils %> <br>
+
+  <b>Опекунство: </b> <% if @user.guardianship == "1" %>
+      <%= "Да" %>
+  <% else %>
+      <%= "Нет" %>
+  <% end %>
+  <br>
+
+  <b>Ограниченные возможности здоровья: </b> <% if @user.disability == "1" %>
+      <%= "Да" %>
+  <% else %>
+      <%= "Нет" %>
+  <% end %>
+</div>
+
+<div class="col-md-4">
+<h2>Данные о матери</h2>
+  <b>ФИО: </b> <%= @user.mother_name %> <br/>
+  <b>Телефон: </b> <%= @user.mother_telephone %> <br/>
+  <b>E-mail: </b> <%= @user.mother_email %> <br/>
+  <b>Место работы: </b> <%= @user.mother_job %> <br/>
+  <b>Должность: </b> <%= @user.mother_occupation %> <br/>
+  <b>Образование: </b> <%= @user.mother_education %> <br/>
+</div>
+
+<div class="col-md-4">
+  <h2>Данные об отце</h2>
+  <b>ФИО: </b> <%= @user.mother_name %> <br/>
+  <b>Телефон: </b> <%= @user.mother_telephone %> <br/>
+  <b>E-mail: </b> <%= @user.mother_email %> <br/>
+  <b>Место работы: </b> <%= @user.mother_job %> <br/>
+  <b>Должность: </b> <%= @user.mother_occupation %> <br/>
+  <b>Образование: </b> <%= @user.mother_education %> <br/>
+</div>

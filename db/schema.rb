@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608044117) do
+ActiveRecord::Schema.define(version: 20150609042624) do
 
   create_table "grades", force: :cascade do |t|
     t.string   "name"
@@ -47,8 +47,7 @@ ActiveRecord::Schema.define(version: 20150608044117) do
     t.string   "father_telephone"
     t.string   "father_education"
     t.string   "role"
-    t.string   "passport_series"
-    t.string   "passport_number"
+    t.string   "passport"
     t.string   "place_of_birth"
     t.date     "date_of_birth"
     t.string   "snils"
@@ -56,6 +55,8 @@ ActiveRecord::Schema.define(version: 20150608044117) do
     t.string   "adress"
     t.string   "telephone"
     t.string   "email"
+    t.boolean  "guardianship"
+    t.boolean  "disability"
   end
 
   add_index "users", ["login"], name: "index_users_on_login", unique: true

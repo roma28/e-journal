@@ -1,27 +1,61 @@
-  <div class="col-md-4">
-    <h3>Ученик</h3>
-    <div class="form-group">
-      <%= f.label :login, "Логин" %>
-      <%= f.text_field :login, class: "form-control" %>
-    </div>
+<div class="col-md-4">
+  <h3>Ученик</h3>
 
-    <div class="form-group">
-      <%= f.label :name, "Имя" %>
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password, "Пароль" %>
-      <%= f.password_field :password, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password_confirmation, "Подтверждение пароля" %>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
-    </div>
-
+  <div class="form-group">
+    <%= f.label :name, "ФИО" %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :date_of_birth, "Дата рождения" %>
+    <%= f.date_select :date_of_birth, { start_year: 1995 }, {:class => "form-control"} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :place_of_birth, "Место рождения" %>
+    <%= f.text_field :place_of_birth, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :passport, "Серия и номер паспорта" %>
+    <%= f.text_field :passport, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :adress, "Адрес" %>
+    <%= f.text_field :adress, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :telephone, "Телефон" %>
+    <%= f.text_field :telephone, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+<%= f.label :email, "E-mail" %>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :inn, "ИНН" %>
+    <%= f.text_field :inn, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :snils, "СНИЛС" %>
+    <%= f.text_field :snils, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :guardianship, "Опекунство"  %>
+    <%= f.check_box :guardianship%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :disability, "Ограниченные возможности здоровья"  %>
+    <%= f.check_box :disability %>
+  </div>
+</div>
 
 <div class="col-md-4">
   <h3>Мать</h3>

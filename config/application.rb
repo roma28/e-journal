@@ -19,5 +19,6 @@ module EJournal
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.i18n.default_locale = :ru
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.exceptions_app = self.routes
   end
 end
